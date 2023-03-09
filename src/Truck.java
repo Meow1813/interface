@@ -4,11 +4,16 @@ public class Truck extends Transport {
         super(modelName, wheelsCount);
     }
 
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+    @Override
+    public void service() {
+        if (this != null) {
+            System.out.println("Обслуживаем " + this.getModelName());
+            for (int i = 0; i < this.getWheelsCount(); i++) {
+                System.out.println("Меняем покрышку");
+            }
+            System.out.println("Проверяем двигатель");
+            System.out.println("Проверяем прицеп");
+        }
     }
 
-    public void checkTrailer() {
-        System.out.println("Проверяем прицеп");
-    }
 }
